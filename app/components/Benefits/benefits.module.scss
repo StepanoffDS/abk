@@ -1,0 +1,184 @@
+@import '../../styles/mixins.scss';
+
+.benefits {
+  margin-top: 120px;
+  padding-top: 0;
+  padding: 132px 40px 178px;
+
+  border-radius: var(--br-big);
+  background: var(--fg);
+
+  @include mediaLg {
+    margin-top: 90px;
+    padding: 60px 40px;
+  }
+
+  @include mediaMd {
+    margin-top: 70px;
+    padding: 50px 0px;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  @include mediaLg {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 26px;
+  }
+}
+
+.title {
+  max-width: 485px;
+
+  @include mediaSm {
+    max-width: 290px;
+  }
+}
+
+.text {
+  max-width: 405px;
+
+  font-size: 20px;
+  line-height: 140%;
+
+  @include mediaSm {
+    max-width: 76vw;
+  }
+}
+
+.body {
+  margin-top: 90px;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+
+  @include mediaLg {
+    grid-template-columns: repeat(2, 1fr);
+
+    margin-top: 50px;
+  }
+
+  @include mediaSm {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 115px;
+
+  position: relative;
+
+  padding: 35px 28px;
+
+  border-radius: var(--br);
+  background: var(--bg);
+  border: 1px solid var(--gray);
+
+  &--accent {
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    gap: 10px;
+
+    background: var(--bg2);
+
+    transform: translateY(-12px);
+
+    .card-text {
+      font-size: 20px;
+      font-weight: 400;
+      color: #fff;
+      line-height: 140%;
+    }
+
+    .card-image {
+      position: absolute;
+      bottom: 37px;
+      right: 80px;
+
+      width: 48px;
+      height: 48px;
+
+      @include mediaMd {
+        right: 40px;
+        bottom: 30px;
+      }
+    }
+  }
+
+  @include mediaXl {
+    gap: 90px;
+
+    &--accent {
+      .card-text {
+        text-wrap: balance;
+      }
+
+      .card-image {
+        display: none;
+      }
+    }
+  }
+
+  @include mediaLg {
+    &--accent {
+      transform: none;
+
+      .card-image {
+        display: block;
+      }
+    }
+  }
+
+  @include mediaSm {
+    align-items: center;
+    gap: 53px;
+
+    padding-bottom: 39px;
+
+    &--accent {
+      flex-direction: column-reverse;
+      justify-content: flex-end;
+      gap: 10px;
+
+      background: var(--bg2);
+
+      .card-text {
+        margin-top: 10px;
+
+        text-align: center;
+      }
+
+      .card-image {
+        display: none;
+      }
+    }
+  }
+}
+
+.card-text {
+  color: var(--title);
+
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 120%;
+}
+
+.card-image {
+  width: 41px;
+  height: 41px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+  }
+}

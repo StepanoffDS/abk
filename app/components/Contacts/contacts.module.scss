@@ -1,0 +1,114 @@
+@import '../../styles/mixins.scss';
+
+.inner {
+  display: flex;
+  gap: 40px;
+
+  @include mediaLg {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @include mediaSm {
+    gap: 25px;
+  }
+}
+
+.phone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+
+  padding: 38px 30px;
+  padding-right: 64px;
+
+  border-radius: var(--br);
+  background: var(--text);
+  color: var(--accent-text);
+
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 100%;
+
+  &:hover {
+    color: var(--accent2);
+  }
+
+  @include mediaMd {
+    font-size: 32px;
+  }
+
+  @include mediaSm {
+    justify-content: flex-start;
+    gap: 22px;
+
+    width: min(340px, 100%);
+    padding: 21px 17px;
+
+    font-size: 24px;
+  }
+}
+
+.phone-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 98px;
+  aspect-ratio: 1;
+
+  border-radius: 50%;
+  background: var(--accent2);
+
+  img {
+    object-fit: cover;
+    object-position: center center;
+  }
+
+  @include mediaSm {
+    width: 32px;
+
+    img {
+      width: 11px;
+      height: 11px;
+    }
+  }
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  @include mediaSm {
+    gap: 14px;
+  }
+}
+
+.link {
+  --size: 98px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: var(--size);
+  height: var(--size);
+
+  border-radius: 50%;
+  background: var(--text);
+
+  &:hover {
+    opacity: var(--hover-opacity);
+  }
+
+  @include mediaSm {
+    --size: 66px;
+
+    img {
+      width: 28px;
+      height: 28px;
+    }
+  }
+}

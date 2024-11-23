@@ -1,0 +1,126 @@
+@import '../../styles/mixins.scss';
+
+.inner {
+  display: grid;
+}
+
+.header {
+  margin: 0 auto;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  margin-left: 63px;
+
+  line-height: 105%;
+
+  span {
+    position: relative;
+    left: -86px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 3px;
+      right: -59px;
+
+      display: inline-block;
+
+      width: 50px;
+      aspect-ratio: 1;
+
+      background-image: url(/icons/doc.svg);
+      background-position: 50%;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+
+  @include mediaSm {
+    margin-left: 46px;
+
+    line-height: 116%;
+
+    span {
+      left: -64px;
+
+      &::after {
+        right: -44px;
+
+        width: 32px;
+      }
+    }
+  }
+}
+
+.body {
+  margin-top: 50px;
+
+  display: flex;
+  gap: 10px;
+
+  @include mediaMd {
+    flex-direction: column;
+  }
+}
+
+.card {
+  flex: 1;
+
+  padding: 30px;
+
+  border-radius: var(--br);
+  background: var(--fg);
+
+  @include mediaLg {
+    padding: 14px;
+  }
+
+  @include mediaMd {
+    padding: 20px;
+  }
+
+  @include mediaSm {
+    padding: 12px 12px 50px;
+
+    text-align: center;
+  }
+}
+
+.card-image {
+  width: 100%;
+  aspect-ratio: 407/197;
+
+  border-radius: var(--br2);
+
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+  }
+
+  @include mediaSm {
+    aspect-ratio: 389 / 197;
+  }
+}
+
+.card-title {
+  margin-top: 37px;
+
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 140%;
+}
+
+.card-text {
+  margin-top: 25px;
+
+  font-size: 20px;
+  line-height: 140%;
+}

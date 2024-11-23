@@ -1,0 +1,196 @@
+@import '../../styles/mixins.scss';
+
+.hero {
+  margin-top: 78px;
+
+  @include mediaLg {
+    margin-top: 23px;
+  }
+}
+
+.inner {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+
+  max-width: 1320px;
+
+  @include mediaXl {
+    justify-content: flex-start;
+    gap: 30px;
+  }
+
+  @include mediaLg {
+  }
+
+  @include mediaSm {
+    flex-direction: column-reverse;
+    gap: 46px;
+  }
+}
+
+.title {
+  margin-top: 33px;
+
+  font-size: 90px;
+  font-weight: 500;
+  text-align: right;
+  line-height: 114%;
+
+  .gray {
+    color: #cdcdcd;
+    margin-right: -5px;
+  }
+
+  .accent {
+    display: block;
+
+    margin-right: -162px;
+    margin-top: -17px;
+
+    &::before {
+      content: '';
+      position: relative;
+      bottom: -20px;
+
+      display: inline-block;
+      margin-right: 20px;
+      width: 98px;
+      aspect-ratio: 1;
+
+      background-image: url(/icons/paper-clip.svg);
+      background-position: 50%;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &:before {
+    content: '';
+
+    position: relative;
+    bottom: -8px;
+
+    display: inline-block;
+    margin-right: 20px;
+    height: 98px;
+    aspect-ratio: 178 / 98;
+
+    background-image: url(/icons/hero-before-icon.svg);
+    background-position: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  @include mediaXxl {
+    font-size: 70px;
+
+    &::before {
+      height: 70px;
+    }
+  }
+
+  @include mediaXl {
+    margin-top: 80px;
+
+    font-size: 60px;
+
+    &::before {
+      height: 60px;
+    }
+
+    .accent {
+      &::before {
+        width: 60px;
+      }
+    }
+  }
+
+  @include mediaLg {
+    max-width: 546px;
+    margin-top: 8vw;
+
+    font-size: 6vw;
+
+    &::before {
+      margin-right: 1vw;
+      margin-left: 2vw;
+
+      width: auto;
+      height: 38px;
+    }
+
+    .accent {
+      margin-top: -2px;
+      margin-right: -50px;
+
+      &::before {
+        bottom: -8px;
+        width: 38px;
+
+        margin-right: 1vw;
+      }
+    }
+
+    .gray {
+    }
+  }
+
+  @include mediaSm {
+    margin-top: 0;
+
+    font-size: 40px;
+    text-align: left;
+
+    .gray {
+      margin-left: 6vw;
+      margin-right: 0;
+    }
+
+    .accent {
+      display: inline-block;
+
+      margin-left: 26vw;
+    }
+  }
+
+  @include mediaXs {
+    .gray {
+      margin-left: 0;
+    }
+  }
+}
+
+.image {
+  position: relative;
+  height: 233px;
+  aspect-ratio: 535 / 233;
+  overflow: hidden;
+  border-radius: var(--br);
+  flex-shrink: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+  }
+
+  @include mediaXl {
+    height: 200px;
+  }
+
+  @include mediaLg {
+    height: 20vw;
+  }
+
+  @include mediaMd {
+    height: 18vw;
+  }
+
+  @include mediaSm {
+    aspect-ratio: 340 / 131;
+    height: auto;
+    width: 100%;
+  }
+}
