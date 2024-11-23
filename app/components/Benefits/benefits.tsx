@@ -49,6 +49,7 @@ export const Benefits = () => {
           <main className={styles['body']}>
             {benefits.map((item) => (
               <article
+                key={item.id}
                 className={`${styles['card']} ${
                   item.accent ? styles['card--accent'] : ''
                 }`}
